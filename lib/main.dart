@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/description_place.dart';
 
 void main() => runApp(const MyApp());
 
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
             color: Color.fromARGB(255, 255, 255, 255),
           ),
         ),
-        body: Stack(children: [
+        body: DescriptionPlace()
+        
+        
+        /*Stack(children: [
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -58,7 +62,7 @@ class MyApp extends StatelessWidget {
               ),
             )
           )
-        ],) 
+        ],) */
       )//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
