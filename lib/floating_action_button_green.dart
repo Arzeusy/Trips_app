@@ -20,11 +20,11 @@ class _FloaingActionButtonGreenState extends State<FloatingActionButtonGreen>{
   bool favState = false;
   
   void onPressedFav (){
-    ScaffoldMessenger.of(context).showSnackBar(
+   /*  ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text("Agregaste a tus favoritos"),
       )
-    );
+    ); */
     setState(() {
       favState = !favState;
     });

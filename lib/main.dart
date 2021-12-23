@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/description_place.dart';
 import 'package:flutter/services.dart';
-import 'package:platzi_trips_app/header_appbar.dart';
+import 'package:platzi_trips_app/platzi_trips.dart';
 
 
 void main() => runApp(const MyApp());
@@ -34,43 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Stack(
-          children: [
-            DescriptionPlace("Duwali Ella", 5 , "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", key: UniqueKey(),),
-            HeaderAppBar()
-          ],
-        ) 
-        
-        
-        /*Stack(children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/back1.jpeg"),
-                fit: BoxFit.cover
-              ),
-              
-            ),
-            child:null,
-          ),
-           Center(
-            child: Container(
-              height: 100,
-              color: const Color.fromRGBO(0, 0, 0, 0.5),
-              child: const Center(
-                child: Text(
-                  "Naughty", 
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.white
-                  ),
-                ),
-              ),
-            )
-          )
-        ],) */
-      )//const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:  PlatziTrips()
     );
   }
 }
