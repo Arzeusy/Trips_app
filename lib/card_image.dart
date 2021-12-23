@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/floating_action_button_green.dart';
 
 
 class CardImage extends StatelessWidget {
@@ -35,7 +36,13 @@ class CardImage extends StatelessWidget {
       )
     );
 
-    return card;
+    return Stack(
+      alignment: const Alignment(1.0, 1.0),
+      children: [
+        card,
+        FloatingActionButtonGreen()
+      ],
+    );
     
   }
 }
