@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/home_trips.dart';
+import 'package:platzi_trips_app/navigation_bar_cupertino.dart';
 import 'package:platzi_trips_app/profile_user.dart';
 import 'package:platzi_trips_app/search_trips.dart';
 
@@ -43,10 +44,13 @@ class _PlatziTripsState extends State<PlatziTrips>{
       body: widgetsChildren[_indextap],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: Colors.white,
+          canvasColor: Colors.transparent,
           primaryColor:  Colors.purple
         ),
-        child: BottomNavigationBar(
+        child:  NavigationBarCuperttino()
+        
+        
+        /*BottomNavigationBar(
           unselectedItemColor: Color.fromARGB(255, 186, 186, 186),
           selectedItemColor: Colors.purple,
           onTap: onTapTapped,
@@ -73,7 +77,10 @@ class _PlatziTripsState extends State<PlatziTrips>{
               label: ""
             ),
           ],
-        ),
+        ),*/
+
+
+        
       ),
     );
 
