@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/button.dart';
 import 'package:platzi_trips_app/gradient_back.dart';
 import 'package:platzi_trips_app/rating.dart';
 import 'package:platzi_trips_app/review_list.dart';
@@ -95,9 +96,11 @@ class DescriptionPlace extends StatelessWidget{
 
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           titleStars,
           description,
+          Button("Navigate"),
           ReviewList(key: UniqueKey())
         ],
         
