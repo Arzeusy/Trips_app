@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class GradienBack extends StatelessWidget {
   
   String title = "Popular";
+  double heightGradient = 250.0;
 
-  GradienBack(this.title, {Key? key}) : super(key: key);
+  GradienBack(this.title, this.heightGradient, {Key? key}) : super(key: key);
 
 
 
@@ -12,7 +13,7 @@ class GradienBack extends StatelessWidget {
   Widget build(BuildContext context){
 
     return Container(
-      height: 250.0,
+      height: heightGradient,
       decoration: const BoxDecoration(
         gradient:  LinearGradient(
           colors: [

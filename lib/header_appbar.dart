@@ -14,7 +14,7 @@ class HeaderAppBar extends StatelessWidget{
           height: 308.0,
           decoration: const BoxDecoration(color: Colors.white)
         ),
-        GradienBack("Popular"),
+        GradienBack("Popular", 250.0),
         CardImageList()
       ],
     );

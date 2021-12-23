@@ -6,15 +6,10 @@ import 'package:platzi_trips_app/search_trips.dart';
 
 class PlatziTrips extends StatefulWidget {
   const PlatziTrips({Key? key}) : super(key: key);
-
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _PlatziTripsState();
   }
-
-
-
 }
 
 
