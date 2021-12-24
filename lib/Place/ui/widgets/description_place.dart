@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/button.dart';
-import 'package:platzi_trips_app/gradient_back.dart';
-import 'package:platzi_trips_app/rating.dart';
-import 'package:platzi_trips_app/review_list.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/button.dart';
+import 'package:platzi_trips_app/shared/widgets/gradient_back.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/rating.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/review_list.dart';
 
 // ignore: must_be_immutable
 class DescriptionPlace extends StatelessWidget{

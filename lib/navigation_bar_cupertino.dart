@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:platzi_trips_app/home_trips.dart';
-import 'package:platzi_trips_app/profile_user.dart';
-import 'package:platzi_trips_app/search_trips.dart';
+import 'package:platzi_trips_app/Place/ui/screens/home_trips.dart';
+import 'package:platzi_trips_app/User/ui/screens/profile_user.dart';
+import 'package:platzi_trips_app/Search/ui/screens/search_trips.dart';
 
 class NavigationBarCuperttino extends StatelessWidget {
   const NavigationBarCuperttino({Key? key}) : super(key: key);

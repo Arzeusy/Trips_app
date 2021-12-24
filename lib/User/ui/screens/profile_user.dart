@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/card_image_list.dart';
-import 'package:platzi_trips_app/gradient_back.dart';
-import 'package:platzi_trips_app/profile_header.dart';
-import 'package:platzi_trips_app/profile_list_photos.dart';
+import 'package:platzi_trips_app/shared/widgets/gradient_back.dart';
+import 'package:platzi_trips_app/User/ui/widgets/profile_header.dart';
+import 'package:platzi_trips_app/User/ui/widgets/profile_list_photos.dart';
 
 class ProfileUser extends StatelessWidget {
   @override

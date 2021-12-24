@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/rating.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/rating.dart';
 
 
 // ignore: must_be_immutable

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/home_trips.dart';
+import 'package:platzi_trips_app/Place/ui/screens/home_trips.dart';
 import 'package:platzi_trips_app/navigation_bar_cupertino.dart';
-import 'package:platzi_trips_app/profile_user.dart';
-import 'package:platzi_trips_app/search_trips.dart';
+import 'package:platzi_trips_app/User/ui/screens/profile_user.dart';
+import 'package:platzi_trips_app/Search/ui/screens/search_trips.dart';
 
 class PlatziTrips extends StatefulWidget {
   const PlatziTrips({Key? key}) : super(key: key);
@@ -16,11 +16,11 @@ class PlatziTrips extends StatefulWidget {
 class _PlatziTripsState extends State<PlatziTrips>{
   
   final List<Widget> widgetsChildren = [
-    HomeTrips(),
+    const HomeTrips(),
     SearchTrips(),
     ProfileUser(),
-    HomeTrips(),
-    HomeTrips(),
+    const HomeTrips(),
+    const HomeTrips(),
   ];
   int _indextap = 0;
 
@@ -42,7 +42,7 @@ class _PlatziTripsState extends State<PlatziTrips>{
           canvasColor: Colors.transparent,
           primaryColor:  Colors.purple
         ),
-        child:  NavigationBarCuperttino()
+        child:  const NavigationBarCuperttino()
         
         
         /*BottomNavigationBar(
