@@ -14,7 +14,7 @@ class ReviewList extends StatelessWidget {
 
     return Container(
       margin:  const EdgeInsets.only(
-        bottom: 20.0
+        bottom: 60.0
       ),
       child: Column(
         children: [

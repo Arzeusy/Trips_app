@@ -45,7 +45,8 @@ class _PlatziTripsState extends State<PlatziTrips>{
         child:  const NavigationBarCuperttino()
         
         
-        /*BottomNavigationBar(
+        /*
+        BottomNavigationBar(
           unselectedItemColor: Color.fromARGB(255, 186, 186, 186),
           selectedItemColor: Colors.purple,
           onTap: onTapTapped,
@@ -72,7 +73,8 @@ class _PlatziTripsState extends State<PlatziTrips>{
               label: ""
             ),
           ],
-        ),*/
+        ),
+        */
 
 
         
