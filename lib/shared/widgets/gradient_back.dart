@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GradienBack extends StatelessWidget {
   
   String title = "Popular";
-  double heightGradient = 250.0;
+  double? heightGradient = 0.0;
 
   GradienBack(this.title, this.heightGradient, {Key? key}) : super(key: key);
 
