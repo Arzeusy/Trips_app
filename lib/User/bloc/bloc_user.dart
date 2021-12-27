@@ -20,6 +20,10 @@ class UserBloc implements Bloc {
     return _authRepository.signInFirebase();
   }
 
+  // 2. sign out a la cuenta de gmail
+  void signOut(){
+    _authRepository.signOut();
+  }
 
 
   @override

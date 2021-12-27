@@ -8,7 +8,9 @@ class AuthRepository {
   final _fireBaseAuthAPI = FirebaseAuthAPI();
   Future<User?> signInFirebase() => _fireBaseAuthAPI.signIn();
 
-
+  void signOut() {
+    _fireBaseAuthAPI.signOut();
+  }
   
 
 

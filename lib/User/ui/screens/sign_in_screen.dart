@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'package:platzi_trips_app/platzi_trips.dart';
@@ -21,8 +24,12 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _userBloc = BlocProvider.of(context);
 
+    try { _userBloc = BlocProvider.of(context); }  
+    catch (e) { 
+        print(e.toString());
+    } 
+    
     return _handleCurrentSession();
   }
 
