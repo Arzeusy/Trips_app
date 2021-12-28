@@ -35,7 +35,7 @@ class ProfileHeader extends StatelessWidget {
 
       return Row(
         children: [
-          photo(urlImage: user.photo),
+          photo(urlImage: user.photoURL),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:  [
@@ -119,7 +119,7 @@ class ProfileHeader extends StatelessWidget {
         )
       );
     } else {
-      UserModel usuarioInformacion = UserModel(name: snapshot.data.displayName, email: snapshot.data.email, photo: snapshot.data.photoURL);
+      UserModel usuarioInformacion = UserModel(uid: snapshot.data.uid, name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoURL);
       return Container(
           margin: const EdgeInsets.only(
             top: 100.0,

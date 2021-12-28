@@ -8,6 +8,8 @@ import 'package:platzi_trips_app/shared/widgets/button_green.dart';
 import 'package:platzi_trips_app/shared/widgets/gradient_back.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
+import '../../model/user.dart';
+
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -80,9 +82,18 @@ class _SignInScreenState extends State<SignInScreen> {
                   onPressed: (){
                     _userBloc.signIn().then((value) => {
                       // ignore: avoid_print
-                      print("------------------------------------------------------------------"),
+                      // print("------------------------------------------------------------------"),
                       // ignore: avoid_print
-                      print(value?.displayName.toString())
+                      // print(value?.displayName.toString());
+                      if (value != null){
+                        _userBloc.updateUserData(UserModel(
+                          uid: value.uid.toString(),
+                          name: value.displayName.toString(),
+                          email: value.email.toString(),
+                          photoURL: value.photoURL.toString()
+                        ))
+                      }
+
                     });
                   },
                   width: 300.0,
