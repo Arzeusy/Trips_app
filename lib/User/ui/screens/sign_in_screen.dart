@@ -68,13 +68,18 @@ class _SignInScreenState extends State<SignInScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                  "Welcome \n This is your trabel app" ,
-                  style: TextStyle(
-                    fontSize: 37.0,
-                    fontFamily: "Lato",
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
+                Flexible(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: const Text(
+                      "Welcome \n This is your trabel app" ,
+                      style: TextStyle(
+                        fontSize: 37.0,
+                        fontFamily: "Lato",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                      ),
+                    ),
                   ),
                 ),
                 ButtonCreen(
