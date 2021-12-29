@@ -8,7 +8,7 @@ class PlaceModel{
   final String description;
   final String urlImage;
   final int? likes;
-  final UserModel userOwner;
+  final UserModel? userOwner;
 
   // myfavoritePlaces
 
@@ -19,7 +19,7 @@ class PlaceModel{
     required this.description,
     required this.urlImage,
     this.likes,
-    required this.userOwner,
+    this.userOwner,
   });
 
 

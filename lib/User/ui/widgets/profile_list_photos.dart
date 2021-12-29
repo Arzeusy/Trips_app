@@ -66,7 +66,7 @@ class ProfileListPhotos extends StatelessWidget {
             ],
           ),
         ),
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(iconData: Icons.favorite_border, iconData2: Icons.favorite, )
 
       ],
     ) ;

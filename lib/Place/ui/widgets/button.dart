@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget{
   String buttonText;
-  Button( this.buttonText, {Key? key}) : super(key: key);
+  final VoidCallback onPress;
+  Button( this.buttonText, {Key? key, required this.onPress}) : super(key: key);
 
 
   @override
@@ -11,14 +12,7 @@ class Button extends StatelessWidget{
     // TODO: implement build
 
     return InkWell(
-      onTap: (){
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Navegando"),
-          )
-        );
-
-      },
+      onTap: onPress,
       child: Container(
         margin: const EdgeInsets.only(
           top: 10.0,

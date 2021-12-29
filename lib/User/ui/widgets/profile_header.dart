@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:platzi_trips_app/Place/ui/screens/place_add.dart';
 import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 
@@ -93,7 +96,14 @@ class ProfileHeader extends StatelessWidget {
       children:  [
         userActionsButtons(size: 40, iconName: Icons.vpn_key, onPressed: (){print("boton vpn key");}),
         // userActionsButtons(size: 40, iconName: Icons.payment),
-        userActionsButtons(size: 60, iconName: Icons.add, onPressed: (){print("boton add");}),
+        userActionsButtons(size: 60, iconName: Icons.add, onPressed: (){
+          Navigator.push( 
+            context, 
+            MaterialPageRoute(
+              builder: (BuildContext context) => AddPlaceScreen()
+            )
+          );
+        }),
         // userActionsButtons(size: 40, iconName: Icons.drafts),
         userActionsButtons(size: 40, iconName: Icons.exit_to_app, onPressed: (){_userBloc.signOut();}),
       ],

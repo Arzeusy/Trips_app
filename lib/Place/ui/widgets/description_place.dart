@@ -100,7 +100,7 @@ class DescriptionPlace extends StatelessWidget{
         children: [
           titleStars,
           description,
-          Button("Navigate"),
+          Button("Navigate", onPress: (){print("navegando ----------------------");},),
           ReviewList(key: UniqueKey())
         ],
         

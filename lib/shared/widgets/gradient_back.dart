@@ -57,7 +57,8 @@ class GradienBack extends StatelessWidget {
                 fontWeight: FontWeight.bold
               ),
             ),
-          )
+          ),
+          
         ],
       ) 
       //alignment: const Alignment(-0.9, -0.6),

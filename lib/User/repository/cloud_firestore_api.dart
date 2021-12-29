@@ -1,4 +1,8 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:platzi_trips_app/Place/model/place.dart';
 import 'package:platzi_trips_app/User/model/user.dart';
 
 class CloudFirestoreAPI{
@@ -7,6 +11,7 @@ class CloudFirestoreAPI{
   final String placesCollection = "places";
 
   final FirebaseFirestore _db = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> updateUserData( UserModel usuario){
     DocumentReference ref = _db.collection(usersCollection).doc(usuario.uid);
@@ -23,7 +28,20 @@ class CloudFirestoreAPI{
 
   }
 
+  Future<void> updatePlaceData(PlaceModel lugar) async {
+    CollectionReference refPlaces = _db.collection(placesCollection);
 
+    // ignore: unused_local_variable
+    User usuario = _auth.currentUser!;
+
+    await refPlaces.add({
+      'name': lugar.name,
+      'description': lugar.description,
+      'likes': lugar.likes,
+      'userOwner': "$usersCollection/${usuario.uid} }"
+    });
+
+  }
 
 
 
