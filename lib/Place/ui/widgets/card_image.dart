@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/shared/widgets/floating_action_button_green.dart';
 
@@ -43,7 +45,7 @@ class CardImage extends StatelessWidget {
       decoration:  BoxDecoration(
         image:   DecorationImage(
           fit: BoxFit.cover,
-          image:  AssetImage( pathImage)
+          image: pathImage.contains("assets") ?  AssetImage( pathImage): FileImage(File(pathImage)) as ImageProvider
         ),
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [

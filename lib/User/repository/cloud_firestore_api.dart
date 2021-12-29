@@ -38,7 +38,8 @@ class CloudFirestoreAPI{
       'name': lugar.name,
       'description': lugar.description,
       'likes': lugar.likes,
-      'userOwner': "$usersCollection/${usuario.uid} }"
+      'userOwner': "$usersCollection/${usuario.uid}",
+      'urlImage': lugar.urlImage 
     });
 
   }

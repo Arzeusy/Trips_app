@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -8,6 +9,7 @@ import 'package:platzi_trips_app/Place/ui/widgets/description_place.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/titile_input_location.dart';
 import 'package:platzi_trips_app/shared/widgets/gradient_back.dart';
 import 'package:platzi_trips_app/shared/widgets/text_input.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../User/bloc/bloc_user.dart';
 
@@ -31,9 +33,9 @@ class _AddPlaceScreenStatus extends State<AddPlaceScreen>{
   final _controllerTitlePlace = TextEditingController();
   final _controllerDescriptionPlace = TextEditingController();
   final _controllerLocationPlace = TextEditingController();
-  final File image = File("assets/grid-opacity.jpg");
+  File image = File("assets/grid-opacity.jpg");
   late final UserBloc _userBloc ;
-  
+  final picker = ImagePicker();
   
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,38 @@ class _AddPlaceScreenStatus extends State<AddPlaceScreen>{
   catch (e) { 
       print(e.toString());
   } 
+
+  Future selImagen( int tipo) async{
+    XFile? pickedFile;
+    try {
+      if(tipo == 1){
+        // picker.pickImage(source: )
+        pickedFile = await picker.pickImage(source: ImageSource.camera);
+      } else {
+        pickedFile = await picker.pickImage(source: ImageSource.gallery);
+      }
+      print("1-----------------------");
+
+
+      setState(() {
+        print("2-----------------------");
+        if(pickedFile != null){
+           print("3-----------------------");
+            image = File(pickedFile.path);
+        } else {
+          print("No se selecciono ninguna imagen --------------------------------");
+        } 
+
+      });
+    } catch (e){
+      print("-----------------------");
+      print(e);
+      print("-----------------------");
+    }
+
+  }
+
+
   return Scaffold(
     body: Stack(
       children: [
@@ -87,6 +121,7 @@ class _AddPlaceScreenStatus extends State<AddPlaceScreen>{
                   width: 380.0, 
                   onPressFabIcon: (){
                     print("take a picture ---------------------------------------------");
+                    selImagen(1);
                   },
                 ),
               ),
@@ -116,16 +151,41 @@ class _AddPlaceScreenStatus extends State<AddPlaceScreen>{
               Container(
                 margin: const EdgeInsets.only(top: 20.0),
                 child: Button("Submit", onPress: (){
-                  _userBloc.updatePlaceData(PlaceModel(
-                    name: _controllerTitlePlace.text,
-                    description: _controllerDescriptionPlace.text,
-                    likes:0,
-                    id: "", 
-                    urlImage: '',
-                  )).whenComplete((){
-                    print("Termino subir place ---------------------");
-                    Navigator.pop(context);
+                  _userBloc.currentUser().then((value){
+                    if(value != null){
+                      // firebase storage
+                      String uid = value.uid;
+                      String path = "${uid}/${DateTime.now().toString()}.jpg";
+                      _userBloc.uploadFile(path, image).then((value){
+                        value.then((p0){
+                          p0.ref.getDownloadURL().then((urlImage){
+                            print("URL: " + urlImage);
+                            
+                            _userBloc.updatePlaceData(PlaceModel(
+                              name: _controllerTitlePlace.text,
+                              description: _controllerDescriptionPlace.text,
+                              likes:0,
+                              id: "", 
+                              urlImage: urlImage,
+                            )).whenComplete((){
+                              print("Termino subir place ---------------------");
+                              Navigator.pop(context);
+                            });
+
+
+                          });
+                        });
+                      }).catchError((onError){
+                        print(onError.toString());
+                      });
+                    }
+
                   });
+                 
+
+
+
+                  
                   //firebase storage
                   //url
                   //cloud firestore
