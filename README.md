@@ -1,6 +1,16 @@
-# platzi_trips_app
+# Trips app
 
 A new Flutter project.
+## Device
+Pixel 2 - resolution 1080X1920
+OS - Android 9.0 x86 (Pie)
+
+
+## launching app
+
+flutter emulators --launch Pixel_2_API_28
+flutter run --no-sound-null-safety 
+
 
 ## Getting Started
 
